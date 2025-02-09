@@ -1,0 +1,7 @@
+commit 8cdbdb0007bcb254328277d7f78028d6eab8baf7
+Author: Brian Yang <yangbri1@msu.edu>
+Date:   Sun Feb 9 03:18:04 2025 +0000
+
+    Playing around with '@ManyToOne()' (many albums could be created by an artist) & 'OneToMany()'  (one album may have many songs) annotations. As well as connecting different DB tables together using '@JoinColumn()' annotation by their FOREIGN_KEY (PRIMARY_KEY in 'Album' DB) 'album_fk' identifier.
+
+ 2 files changed, 9 insertions(+)
