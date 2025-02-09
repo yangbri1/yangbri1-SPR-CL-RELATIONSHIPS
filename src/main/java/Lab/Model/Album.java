@@ -30,11 +30,20 @@ public class Album {
     /**
      * Review the other model classes to see examples of annotations that link entities.
      */
+
+    /* "... Albums ought to have a many-to-one relationship with artists (many albums
+    * may be created by one artist) ..." */
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "album_fk")
     private Artist artist;
 
     /**
      * Review the other model classes to see examples of annotations that link entities.
      */
+    /* ... one-to-many relationship with songs (one album may have many songs) ... */
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "album_fk") // -- @JoinColumn(name = "artist_fk") works too ... as well as omitting this whole line for the tests
     private List<Song> songs;
 
     public Album(String title) {
